@@ -1,36 +1,36 @@
 import React from "react";
-import hero from "./hero.png";
-import "./Hero.css";
+import { Link } from "react-router-dom";
+import logo from "./logo.png";
+import "./Navbar.css";
 
 interface Props {}
 
-const Hero = (props: Props) => {
+const Navbar = (props: Props) => {
   return (
-    <section id="hero">
-      <div className="container flex flex-col-reverse mx-auto p-8 lg:flex-row">
-        <div className="flex flex-col space-y-10 mb-44 m-10 lg:m-10 xl:m-20 lg:mt:16 lg:w-1/2 xl:mb-52">
-          <h1 className="text-5xl font-bold text-center lg:text-6xl lg:max-w-md lg:text-left">
-            Financial data with no news.
-          </h1>
-          <p className="text-2xl text-center text-gray-400 lg:max-w-md lg:text-left">
-            Search relevant financial documents without fear mongering and fake
-            news.
-          </p>
-          <div className="mx-auto lg:mx-0">
-            <a
-              href=""
-              className="py-5 px-10 text-2xl font-bold text-white bg-lightGreen rounded lg:py-4 hover:opacity-70"
-            >
-              Get Started
-            </a>
+    <nav className="relative container mx-auto p-6">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center space-x-20">
+          <Link to="/">
+            <img src={logo} alt="" />
+          </Link>
+          <div className="hidden font-bold lg:flex">
+            <Link to="/search" className="text-black hover:text-darkBlue">
+              Search
+            </Link>
           </div>
         </div>
-        <div className="mb-24 mx-auto md:w-180 md:px-10 lg:mb-0 lg:w-1/2">
-          <img src={hero} alt="" />
+        <div className="hidden lg:flex items-center space-x-6 text-back">
+          <div className="hover:text-darkBlue">Login</div>
+          <a
+            href=""
+            className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"
+          >
+            Signup
+          </a>
         </div>
       </div>
-    </section>
+    </nav>
   );
 };
 
-export default Hero;
+export default Navbar;
