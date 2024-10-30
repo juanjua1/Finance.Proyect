@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { CompanyTenK } from "../../company";
-import { getTenK } from "../../api";
-import TenKFinderItem from "./TenKFinderItem/TenKFinderItem";
+import { CompanyTenk } from "../../company";
+import { getTenk } from "../../api";
+import TenKFinderItem from "./TenkFinderItem/TenKFinderItem";
 import Spinner from "../Spinners/Spinner";
 
 type Props = {
@@ -9,10 +9,10 @@ type Props = {
 };
 
 const TenKFinder = ({ ticker }: Props) => {
-  const [companyData, setCompanyData] = useState<CompanyTenK[]>();
+  const [companyData, setCompanyData] = useState<CompanyTenk[]>();
   useEffect(() => {
     const getTenKData = async () => {
-      const value = await getTenK(ticker);
+      const value = await getTenk(ticker);
       setCompanyData(value?.data);
     };
     getTenKData();

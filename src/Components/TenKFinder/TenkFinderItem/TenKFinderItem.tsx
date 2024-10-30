@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CompanyTenK } from "../../../company";
+import { CompanyTenk } from "../../../company";
 
 type Props = {
-  tenK: CompanyTenK;
+  tenK: CompanyTenk;
 };
 
 const TenKFinderItem = ({ tenK }: Props) => {

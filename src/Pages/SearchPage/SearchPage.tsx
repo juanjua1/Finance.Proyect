@@ -20,9 +20,6 @@ const SearchPage = (props: Props) => {
 
   const onPortfolioCreate = (e: any) => {
     e.preventDefault();
-    //DO NOT DO THIS
-    // portfolioValues.push(event.target[0].value)
-    // setPortfolioValues(portfolioValues);
     const exists = portfolioValues.find((value) => value === e.target[0].value);
     if (exists) return;
     const updatedPortfolio = [...portfolioValues, e.target[0].value];
@@ -40,13 +37,18 @@ const SearchPage = (props: Props) => {
   const onSearchSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
     const result = await searchCompanies(search);
-    //setServerError(result.data);
+    if (!result) {
+      setServerError("An unexpected error has occurred.");
+      return;
+    }
+
     if (typeof result === "string") {
       setServerError(result);
     } else if (Array.isArray(result.data)) {
       setSearchResult(result.data);
     }
   };
+
   return (
     <>
       <Search
