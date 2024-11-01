@@ -1,0 +1,8 @@
+/home/juan/dev/fullStack/Finance-Project/api/obj/Debug/net8.0/api.csproj.AssemblyReference.cache
+/home/juan/dev/fullStack/Finance-Project/api/obj/Debug/net8.0/api.GeneratedMSBuildEditorConfig.editorconfig
+/home/juan/dev/fullStack/Finance-Project/api/obj/Debug/net8.0/api.AssemblyInfoInputs.cache
+/home/juan/dev/fullStack/Finance-Project/api/obj/Debug/net8.0/api.AssemblyInfo.cs
+/home/juan/dev/fullStack/Finance-Project/api/obj/Debug/net8.0/api.csproj.CoreCompileInputs.cache
+/home/juan/dev/fullStack/Finance-Project/api/obj/Debug/net8.0/api.MvcApplicationPartsAssemblyInfo.cs
+/home/juan/dev/fullStack/Finance-Project/api/obj/Debug/net8.0/api.MvcApplicationPartsAssemblyInfo.cache
+/home/juan/dev/fullStack/Finance-Project/api/obj/Debug/net8.0/api.sourcelink.json
