@@ -26,9 +26,9 @@ namespace api.Repository
 
         public async Task<Comment?> DeleteAsync(int id)
         {
-            var commentModel = await _context.Comments.FirstOrDefaultAsync(x =>.Id == id);
+            var commentModel = await _context.Comments.FirstOrDefaultAsync(x => x.Id == id);
 
-            if(commentModel == null)
+            if (commentModel == null)
             {
                 return null;
             }
@@ -40,26 +40,19 @@ namespace api.Repository
 
         public async Task<List<Comment>> GetAllAsync()
         {
-            var comment = await _commentRepo.GetByIdAsync(id);
-
-            if(comment == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(comment.ToCommentDto());
+            return await _context.Comments.ToListAsync();
         }
 
-        public Task<Comment?> GetByIdAsync(int id)
+        public async Task<Comment?> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Comments.FindAsync(id);
         }
 
         public async Task<Comment?> UpdateAsync(int id, Comment commentModel)
         {
             var existingComment = await _context.Comments.FindAsync(id);
 
-            if(existingComment == null)
+            if (existingComment == null)
             {
                 return null;
             }
