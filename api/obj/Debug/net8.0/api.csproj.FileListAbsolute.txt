@@ -136,3 +136,7 @@
 /home/juan/dev/fullStack/Finance-Project/api/obj/Debug/net8.0/api.pdb
 /home/juan/dev/fullStack/Finance-Project/api/obj/Debug/net8.0/api.genruntimeconfig.cache
 /home/juan/dev/fullStack/Finance-Project/api/obj/Debug/net8.0/ref/api.dll
+/home/juan/dev/fullStack/Finance-Project/api/bin/Debug/net8.0/Microsoft.AspNetCore.JsonPatch.dll
+/home/juan/dev/fullStack/Finance-Project/api/bin/Debug/net8.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/home/juan/dev/fullStack/Finance-Project/api/bin/Debug/net8.0/Newtonsoft.Json.dll
+/home/juan/dev/fullStack/Finance-Project/api/bin/Debug/net8.0/Newtonsoft.Json.Bson.dll
