@@ -140,3 +140,5 @@
 /home/juan/dev/fullStack/Finance-Project/api/bin/Debug/net8.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 /home/juan/dev/fullStack/Finance-Project/api/bin/Debug/net8.0/Newtonsoft.Json.dll
 /home/juan/dev/fullStack/Finance-Project/api/bin/Debug/net8.0/Newtonsoft.Json.Bson.dll
+/home/juan/dev/fullStack/Finance-Project/api/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/juan/dev/fullStack/Finance-Project/api/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
