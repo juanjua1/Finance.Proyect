@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.IO.Compression;
 using System.Linq;
 using System.Threading.Tasks;
 using api.Data;
@@ -21,36 +20,37 @@ namespace api.Repository
         public async Task<Portfolio> CreateAsync(Portfolio portfolio)
         {
             await _context.Portfolios.AddAsync(portfolio);
-            await _context.SaveChangesAsync(); 
+            await _context.SaveChangesAsync();
+            return portfolio;
         }
 
-        public async Task<Portfolio> DeletePorfolio(AppUser appUser, string Symbol)
+        public async Task<Portfolio> DeletePortfolio(AppUser appUser, string symbol)
         {
-            var porfoliModel = await _context.Portfolios.FirstOrDefaultAsync(x => x.AppUserId == appUser.Id && x.Stock.Symbol.ToLower() == Symbol.ToLower());
+            var portfolioModel = await _context.Portfolios.FirstOrDefaultAsync(x => x.AppUserId == appUser.Id && x.Stock.Symbol.ToLower() == symbol.ToLower());
 
-            if(porfoliModel == null)
+            if (portfolioModel == null)
             {
                 return null;
             }
 
-            _context.Portfolios.Remove(porfoliModel);
-            await _contex.SaveChangesAsync();
-            return porfoliModel;
+            _context.Portfolios.Remove(portfolioModel);
+            await _context.SaveChangesAsync();
+            return portfolioModel;
         }
 
-        public async Task<List<Stock>> GetUserPorfolio(AppUser user)
+        public async Task<List<Stock>> GetUserPortfolio(AppUser user)
         {
             return await _context.Portfolios.Where(u => u.AppUserId == user.Id)
             .Select(stock => new Stock
             {
-                Id = Stock.StockId,
+                Id = stock.StockId,
                 Symbol = stock.Stock.Symbol,
                 CompanyName = stock.Stock.CompanyName,
                 Purchase = stock.Stock.Purchase,
                 LastDiv = stock.Stock.LastDiv,
                 Industry = stock.Stock.Industry,
                 MarketCap = stock.Stock.MarketCap
-            }).ToListAsync;
+            }).ToListAsync();
         }
     }
 }

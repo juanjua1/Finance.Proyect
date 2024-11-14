@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
-using api.Migrations;
 
 namespace api.Models
 {
-    [Table("Porfolio")]
+    [Table("Portfolios")]
     public class Portfolio
     {
         public string AppUserId { get; set; }

@@ -2,12 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
-using System.Reflection.Metadata;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using api.Interfaces;
-using api.Migrations;
+using api.Models;
 using Microsoft.IdentityModel.Tokens;
 
 namespace api.Service
@@ -16,6 +15,7 @@ namespace api.Service
     {
         private readonly IConfiguration _config;
         private readonly SymmetricSecurityKey _key;
+
         public TokenService(IConfiguration config)
         {
             _config = config;
@@ -30,7 +30,7 @@ namespace api.Service
             };
 
             var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
-            
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),

@@ -8,6 +8,6 @@ namespace api.Interfaces
 {
     public interface IFMPService
     {
-        Task<Stock> FindStopckBySymbolAsync(string symbol);
+        Task<Stock> FindStockBySymbolAsync(string symbol);
     }
 }
